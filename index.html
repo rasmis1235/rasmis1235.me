@@ -1,122 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Settings</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin: 0;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            width: 48%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
-        button.reset {
-            background-color: #f44336;
-        }
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-        }
-        #output {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            font-family: monospace;
-            white-space: pre-wrap;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
-<div class="container">
-    <h1>Game Settings</h1>
-    
-    <label for="mode">Select Mode:</label>
-    <select id="mode">
-        <option value="Solo">Solo</option>
-        <option value="Duo">Duo</option>
-        <option value="Squad">Squad</option>
-    </select>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <label for="port">Enter Port Number:</label>
-    <input type="number" id="port" placeholder="Enter port number">
-
-    <label for="map">Enter Map Name:</label>
-    <input type="text" id="map" placeholder="Enter map name">
-
-    <div class="buttons">
-        <button class="reset" onclick="resetForm()">Reset</button>
-        <button onclick="applySettings()">Apply</button>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="fade-in">Welcome to My Gaming World</h1>
+      <p class="fade-in">I'm [Your Name], a passionate gamer and developer.</p>
+      <a href="projects.html" class="button fade-in">View My Projects</a>
     </div>
+  </section>
 
-    <div id="output"></div>
-</div>
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>Discord: <a href="#">YourDiscordTag#1234</a></p>
+    <p>Twitter: <a href="https://twitter.com/yourprofile" target="_blank">@yourprofile</a></p>
+  </section>
 
-<script>
-    // Function to reset form
-    function resetForm() {
-        document.getElementById("mode").value = "Solo";
-        document.getElementById("port").value = "";
-        document.getElementById("map").value = "";
-        document.getElementById("output").innerHTML = "";
-    }
+  <footer>
+    <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+  </footer>
 
-    // Function to apply settings and store them in a JSON-like object
-    function applySettings() {
-        const mode = document.getElementById("mode").value;
-        const port = document.getElementById("port").value;
-        const map = document.getElementById("map").value;
-
-        // Validate input
-        if (port === "" || map === "") {
-            alert("Please fill in all fields");
-            return;
-        }
-
-        // Create JSON object
-        const settings = {
-            mode: mode,
-            port: port,
-            map: map
-        };
-
-        // Display JSON data
-        document.getElementById("output").innerHTML = JSON.stringify(settings, null, 4);
-    }
-</script>
-
+  <script src="js/scripts.js"></script>
 </body>
 </html>

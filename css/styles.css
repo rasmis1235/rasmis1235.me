@@ -1,0 +1,278 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #0d0d0d;
+    overflow-x: hidden;
+  }
+  
+  /* Navigation Styling */
+  header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  header nav ul li a {
+    color: #00ff99;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff00cc;
+    transform: scale(1.1);
+  }
+  
+  /* Hero Section */
+  #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background: url('../images/gamer-background.jpg') center/cover fixed;
+    overflow: hidden;
+  }
+  
+  #hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  #hero h1 {
+    font-size: 4rem;
+    color: #00ff99;
+    text-shadow: 0px 0px 10px #00ff99, 0px 0px 20px #ff00cc;
+  }
+  
+  #hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #ddd;
+  }
+  
+  .button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: #ff00cc;
+    color: #0d0d0d;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #00ff99;
+    transform: scale(1.1);
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    color: #00ff99;
+    margin-bottom: 1rem;
+  }
+  
+  #contact p {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Parallax Effect */
+  #hero {
+    background-attachment: fixed;
+  }
+  /* Container for About Section */
+#about .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: rgba(13, 13, 13, 0.9);
+    color: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  #about h1 {
+    font-size: 3rem;
+    color: #00ff99;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  #about p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Projects Section */
+  #projects {
+    padding: 4rem 2rem;
+    background: #0d0d0d;
+    color: #fff;
+    text-align: center;
+  }
+  
+  #projects h1 {
+    font-size: 3rem;
+    color: #00ff99;
+    margin-bottom: 2rem;
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 255, 153, 0.4);
+  }
+  
+  .project-card h2 {
+    font-size: 1.8rem;
+    color: #ff00cc;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-card .button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff00cc;
+    color: #0d0d0d;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s;
+  }
+  
+  .project-card .button:hover {
+    background-color: #00ff99;
+    transform: scale(1.1);
+  }
+  /* Star Field Background */
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(0,0,0,0.9), #000);
+  }
+  
+  /* Star */
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+    opacity: 0.8;
+  }
+  
+  /* Shooting Star */
+  .shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(45deg, rgba(255,255,255,1), rgba(255,255,255,0));
+    opacity: 0.8;
+    border-radius: 5px;
+    animation: shooting 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes shooting {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(50vw) scale(0.3);
+      opacity: 0;
+    }
+  }
+  
