@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button.reset {
+            background-color: #f44336;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Game Settings</h1>
+    
+    <label for="mode">Select Mode:</label>
+    <select id="mode">
+        <option value="Solo">Solo</option>
+        <option value="Duo">Duo</option>
+        <option value="Squad">Squad</option>
+    </select>
+
+    <label for="port">Enter Port Number:</label>
+    <input type="number" id="port" placeholder="Enter port number">
+
+    <label for="map">Enter Map Name:</label>
+    <input type="text" id="map" placeholder="Enter map name">
+
+    <div class="buttons">
+        <button class="reset" onclick="resetForm()">Reset</button>
+        <button onclick="applySettings()">Apply</button>
+    </div>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    // Function to reset form
+    function resetForm() {
+        document.getElementById("mode").value = "Solo";
+        document.getElementById("port").value = "";
+        document.getElementById("map").value = "";
+        document.getElementById("output").innerHTML = "";
+    }
+
+    // Function to apply settings and store them in a JSON-like object
+    function applySettings() {
+        const mode = document.getElementById("mode").value;
+        const port = document.getElementById("port").value;
+        const map = document.getElementById("map").value;
+
+        // Validate input
+        if (port === "" || map === "") {
+            alert("Please fill in all fields");
+            return;
+        }
+
+        // Create JSON object
+        const settings = {
+            mode: mode,
+            port: port,
+            map: map
+        };
+
+        // Display JSON data
+        document.getElementById("output").innerHTML = JSON.stringify(settings, null, 4);
+    }
+</script>
+
+</body>
+</html>
